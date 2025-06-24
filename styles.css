@@ -12,10 +12,18 @@ body {
 }
 
 header {
-    background: #2c3e50;
+    background: rgba(44, 62, 80, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: white;
     padding: 1rem 2rem;
     text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 header h1 {
@@ -225,10 +233,72 @@ footer {
     .app-section {
         min-width: 0;
         width: 100%;
-        max-width: 100%;
-        min-height: 400px;
+        max-width: 500px;
+        min-height: auto;
         max-height: none;
         padding: 1.5rem;
+    }
+    .app-description {
+        min-height: auto;
+        flex: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .landing-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2.5rem 5vw 2.5rem 5vw;
+    }
+    .landing-advantages {
+        display: inline-block;
+        text-align: left;
+        margin: 0 auto 2.5rem auto;
+    }
+    .landing-text {
+        max-width: 100%;
+    }
+    .landing-text h1 {
+        font-size: 2rem;
+    }
+    .landing-advantages li {
+        font-size: 1.05rem;
+    }
+    .landing-download-btn {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .landing-text h1 {
+        font-size: 1.8rem;
+    }
+    .landing-advantages li {
+        font-size: 1rem;
+    }
+    .app-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .app-header h2 {
+        font-size: 1.3rem;
+    }
+    .slider-container {
+        height: 220px;
+    }
+    footer {
+        padding: 1.5rem 1rem;
+    }
+    .developer-info h3 {
+        font-size: 1.2rem;
+    }
+    .developer-info p {
+        font-size: 0.9rem;
     }
 }
 
@@ -316,24 +386,4 @@ footer {
 }
 .landing-image {
     display: none;
-}
-@media (max-width: 900px) {
-    .landing-content {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 2.5rem 5vw 2.5rem 5vw;
-    }
-    .landing-text {
-        max-width: 100%;
-    }
-    .landing-text h1 {
-        font-size: 2rem;
-    }
-    .landing-advantages li {
-        font-size: 1.05rem;
-    }
-    .landing-download-btn {
-        font-size: 1.1rem;
-        padding: 1rem 2rem;
-    }
 } 
